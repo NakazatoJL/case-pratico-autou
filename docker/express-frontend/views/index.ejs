@@ -1,0 +1,42 @@
+<!-- Adiciona o cabeçalho estrutura do HTML -->
+<%- include("./partials/header.ejs") %>
+
+<div class="messageWindow">
+    <!-- Mensagem inicial -->
+    <div class="message"><p>Para começar digite ou cole o texto do email na caixa abaixo, também aceito arquivos de texto nos formatos <code>.pdf</code> e <code>.txt</code>.</p></div>
+    <div class="message"><p>Para mensagens de texto direto na caixa sou capaz de processar apenas uma por vez. Caso possua os emails nos formatos de texto para anexar, sou capaz de processar muiltiplos emails de uma vez (com limite de 10 arquivos por vez).</p></div>
+
+<% if(locals.messages && locals.messages.length > 0){%>
+    <% for (let i = 0; i < messages.length; i++) {%>
+        <!-- Condicional para author = user / server -->
+        <% if(messages[i].author == "server") {%>
+            <!-- Cria uma div com a mensagem preenchendo janela de mensagens por completo -->
+             <div class="message"><p><%- messages[i].content %></p></div>
+        <% } else{%>
+            <!-- Cria uma div com a mensagem preenchendo janela de mensagens pela metade e com fundo de fala -->
+             <div class="messageContainer">
+                <div class ="userMessage fill"></div>
+                <div class="userMessage"><div class="messageBox"><p class="userP"><%- messages[i].content %></p></div></div>
+            </div>
+        <% } %>
+    <%}%>
+<%}%>
+</div>
+
+<div class="center">
+    <form action="/message" method="POST" enctype="multipart/form-data" class="messageForm">
+        <input type="hidden" value="user" name="fAuthor">
+        <textarea id="messageArea" name="fContent" id="" cols="200" rows="5" placeholder="Escreva aqui (opcional)"></textarea>
+        <div class="contentFlex">
+            <input type="file" id="documentFiles" name="fUploadedFiles" accept=".pdf, .txt" multiple>
+            <div class="center"><label for="documentFiles" class="customButton" style="margin-right: 10px;">Anexar arquivos</label>
+            <span id="fileCount" style="margin-top: 10px;"> Nenhum arquivo selecionado</span></div>
+            <input id="messageSubmit" type="submit" value="Post">
+            <label for="messageSubmit" class="customButton" id="buttonLabel">Enviar</label>
+        </div>
+    </form>
+</div>
+
+
+
+<%- include("./partials/footer.ejs") %>

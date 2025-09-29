@@ -1,0 +1,42 @@
+<%- include("./partials/header.ejs") %>
+
+<div>
+    <div class="instructionsFlex contentBlock">
+        <h3>Como iniciar um pedido?</h3>
+    </div>
+    <div class="instructionsContent">
+        <p>Os pedidos são processados através do envio do formulario na página inicial, para iniciar um pedido é necessario preencher o formulario com pelo menos 1 das 3 opções de envio (texto, .txt e/ou .pdf).</p>
+    </div>
+</div>
+
+    <div>
+        <div class="instructionsFlex contentBlock">
+            <h3>Quais as limitações?</h3>
+        </div>
+        <div class="instructionsContent">
+            <p>A aplicação aceita arquivos de até 10MB e um total de 10 arquivos além da mensagem de texto, arquivos maiores que 10MB serão recusados pela aplicação e não serão processados, assim como um envio de mais de 10 arquivos (também sera exibido um alerta).</p>
+        </div>
+    </div>
+
+
+    <div>
+        <div class="instructionsFlex contentBlock">
+            <h3>Meu pedido esta demorando demais, o que fazer?</h3>
+        </div>
+        <div class="instructionsContent">
+            <p>É normal levar alguns segundos (até minutos) caso a Gemini API esteja congestionada, a aplicação atualizada a interface automaticamente quando receber uma resposta (em caso extremo ela retornara um erro e reativara o botão de envio, neste caso tente enviar o pedido novamente).</p>
+        </div>
+    </div>
+
+    <div>
+        <div class="instructionsFlex contentBlock">
+            <h3>Os dados de mensagens anteriores foram apagados, o que fazer?</h3>
+        </div>
+        <div class="instructionsContent">
+            <p>Isso é normal, a aplicação reinicia para economizar dados e com isso os dados anteriores são apagados, dados do seu ultimo pedido serão processados sem problemas.</p>
+        </div>
+    </div>
+
+<div class="contentFill"></div>
+
+<%- include("./partials/footer.ejs") %>

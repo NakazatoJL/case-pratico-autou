@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+pydantic
+httpx
+joblib
+scikit-learn
+nltk
+google-cloud-secret-manager
+google-cloud-storage

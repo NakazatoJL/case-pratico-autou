@@ -1,0 +1,259 @@
+:root{
+    --primaryColor: #bdb9c7;
+    --secondaryColor: #443C68;
+    --thirdColor: #18122B;
+    --fourthColor: #393053;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    height: 100%;
+    font-family: 'Comfortaa', sans-serif;
+    background: var(--thirdColor);
+    margin: 0 10px 0 10px;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, #fileCount{
+    color: var(--primaryColor);
+}
+
+p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+textarea {
+    resize: none;
+}
+
+.contentBlock{
+    background: var(--secondaryColor);
+    padding: 0.5rem 1rem;
+    margin: 1rem 0;
+    border-radius: 20px;
+}
+
+.contentFlex{
+    display: flex;
+    justify-content: space-between;
+}
+
+.instructionsFlex{
+    display: flex;
+    gap: 1rem;
+}
+
+.verticalFlex{
+    display: flex;
+    padding: 1.5rem 1.5rem;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contentFill{
+    flex: 1;
+}
+
+.customButton{
+    margin-top: 5px;
+    padding: 10px 20px;
+    background-color: var(--secondaryColor);
+    color: var(--primaryColor);
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    flex: 0 0 auto; 
+}
+
+.customButton:hover {
+  background-color: var(--thirdColor);
+}
+
+.navParent{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.nav{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: end;
+}
+
+.navItem{
+    color: var(--primaryColor);
+    display: block;
+    padding: 1.2rem 1rem 1rem 1rem;
+    text-decoration: none;
+}
+
+.navItem.h:hover{
+    background: var(--fourthColor);
+    border-radius: 10px;
+}
+
+.navList{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: end;
+    border-radius: 10px 0 10px 10px;
+}
+
+.navToggle,.navToggle2{
+    float: right;
+    display: block;
+    background: transparent;
+    border: 0;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 7px;
+}
+
+.navToggle img,.navToggle2 img{
+    width: 25px;
+    height: 25px;
+}
+
+.message{
+    flex: 0 0 auto;           /* Cada mensagem mantem a sua altura */
+}
+
+.userMessage{
+    display: table-cell;
+    width: 60%;
+}
+
+.userMessage.fill{
+    display: table-cell;
+    width: 40%;
+}
+
+.userP{
+    padding: 15px;
+    text-align: end;
+}
+
+.messageContainer{
+    display: table;
+    flex: 0 0 auto;
+    width: 100%;
+}
+
+.messageWindow, .messageForm{
+    max-width: 900px;
+}
+
+.messageForm{
+    margin: 5px;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: var(--fourthColor);
+}
+
+#messageSubmit, #documentFiles{
+    display: none;
+}
+
+.messageBox{
+    background-color: var(--secondaryColor);
+    border-radius: 25px 25px 0px 25px;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.messageWindow{
+    flex: 1;
+    min-height: 0;    /* This enables overflow inside flex */
+    overflow-y: auto; /* For vertical scrolling, only when needed */
+    scrollbar-color: var(--fourthColor) var(--thirdColor);
+    width: 100%;           /* fill available width up to max */
+    margin: 0 auto;        /* centers horizontally */
+}
+
+.profilePic{
+    width: 200px;
+    border-radius: 50%;
+    float: right;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.instructionsContent{
+    padding-left: 1rem;
+}
+
+#content{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#title{
+    padding-right: auto;
+}
+
+#messageArea{
+    background: var(--thirdColor);
+    color: var(--primaryColor);
+    border: transparent;
+    border-radius: 10px;
+    width: 100%;
+    font-family: 'Comfortaa', sans-serif;
+}
+
+.hidden{
+    display: none;
+}
+
+input[type=text]:focus , #editContent{
+    outline: none;
+}
+
+footer{
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: var(--primaryColor);
+    text-align: center;
+    padding: 0.7rem 0;
+}
+
+@media (max-width: 600px) {
+    .nav{
+        width: 50%;
+    }
+
+    .navList{
+        position: absolute;
+        flex-direction: column;
+        background-color: var(--fourthColor);
+    }
+
+    .messageWindow{
+        scrollbar-color: transparent transparent;
+    }
+
+    .profilePic{
+        float: none;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    p{
+        text-align: justify;
+    }
+
+}
